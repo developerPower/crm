@@ -149,7 +149,7 @@ const __dirname = path.dirname(__filename);
 
 
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:3000', // Specific origin instead of wildcard
+    origin: process.env.CLIENT_URL || 'https://crm-gc6q.onrender.com',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
@@ -210,10 +210,10 @@ app.get('/auth/google',
 
 app.get('/auth/google/callback',
     passport.authenticate('google', { 
-        failureRedirect: `${process.env.CLIENT_URL || 'http://localhost:3000'}/login?error=true`
+        failureRedirect: `${process.env.CLIENT_URL || 'https://crm-gc6q.onrender.com'}/login?error=true`
     }),
     (req, res) => {
-        res.redirect(`${process.env.CLIENT_URL || 'http://localhost:3000'}/dashboard`);
+        res.redirect(`${process.env.CLIENT_URL || 'https://crm-gc6q.onrender.com'}/dashboard`);
     }
 );
 
